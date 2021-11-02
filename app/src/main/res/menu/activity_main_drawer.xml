@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_collect"
+            android:icon="@mipmap/like_checked"
+            android:title="我的收藏" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@mipmap/share"
+            android:title="分享" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@mipmap/about"
+            android:title="关于" />
+
+        <item
+            android:id="@+id/nav_location"
+            android:icon="@mipmap/about"
+            android:title="定位" />
+
+        <item
+            android:id="@+id/nav_customer_service"
+            android:icon="@mipmap/about"
+            android:title="客服" />
+    </group>
+
+<!--    <item android:title="二级菜单 ">-->
+<!--        <menu>-->
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@mipmap/logout"
+                android:title="退出登录" />
+<!--        </menu>-->
+<!--    </item>-->
+
+</menu>

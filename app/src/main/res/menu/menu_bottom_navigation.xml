@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@mipmap/home"
+        android:title="@string/main_page" />
+
+    <item
+        android:id="@+id/nav_tree"
+        android:icon="@mipmap/tree"
+        android:title="@string/main_tree" />
+
+    <item
+        android:id="@+id/nav_navi"
+        android:icon="@mipmap/navi"
+        android:title="@string/main_nav" />
+
+    <item
+        android:id="@+id/nav_project"
+        android:icon="@mipmap/project"
+        android:title="@string/main_project" />
+
+
+</menu>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><!--自定义进度条布局,所有加载中的转圈的菊花 来自此处-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:background="#cc000000"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:indeterminateDrawable="@anim/progress_loading_go"
+        android:minWidth="30dp"
+        android:minHeight="30dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="加载中"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        />
+</LinearLayout>

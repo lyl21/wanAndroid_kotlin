@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">玩安卓</string>
+    <string name="app_version">版本</string>
+    <string name="author_name">lyl21</string>
+    <string name="main_page">首页</string>
+    <string name="main_project">项目</string>
+    <string name="main_tree">体系</string>
+    <string name="main_nav">导航</string>
+    <string name="main_my">我的</string>
+    <string name="search">搜索</string>
+    <string name="drawer_left_open">打开侧边栏</string>
+    <string name="drawer_left_close">关闭侧边栏</string>
+    <string name="login">登录</string>
+    <string name="username">用户名</string>
+    <string name="login_username">账户</string>
+    <string name="pwd">密码</string>
+    <string name="hint_username">请输入用户名</string>
+    <string name="hint_pwd">请输入密码</string>
+
+
+
+
+    <string name="img_404">哎呀图片走丢了</string>
+    <string name="tips">提示</string>
+    <string name="sure">确定</string>
+    <string name="cancel">取消</string>
+    <string name="logout">退出登录</string>
+    <string name="toLogin">请先登录</string>
+    <!--首页-->
+    <string name="article_title">标题</string>
+    <string name="article_tag">标签</string>
+    <string name="article_time_ago">x小时前</string>
+    <string name="userCenter_collect">我的收藏</string>
+
+
+
+
+    <!--项目-->
+
+    <!--体系-->
+
+    <!--导航-->
+
+    <!--我的-->
+
+
+</resources>

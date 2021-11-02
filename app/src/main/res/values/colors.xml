@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="main_base_color">#39C0C2</color>
+    <color name="main_blue_low">#71D4D6</color>
+    <color name="background">#F5F5F5</color>
+    <color name="shallow_white">#FAFAFA</color>
+    <color name="money_yellow">#FC9813</color>
+    <color name="shallow_gray">#909090</color>
+    <color name="shallow_cyan">#ADDCDC</color>
+    <color name="shallow_shallow_white">#99FAFAFA</color>
+    <color name="cyan">#0C8788</color>
+    <color name="shallow_yellow">#B27F39</color>
+    <color name="goods_details_transparent">#66000000</color>
+    <color name="shallow_gray_white">#99FAFAFA</color>
+    <!-- 黑色颜色值开始 -->
+    <!-- 黑色字体 -->
+    <color name="text_black">#323232</color>
+    <!-- 浅黑色 -->
+    <color name="text_black_hint">#646464</color>
+    <!-- 黑色颜色值结束 -->
+
+    <!-- 白色字体 -->
+    <color name="text_white">#FFFFFF</color>
+
+    <!-- 灰色颜色值开始 -->
+    <!-- 灰色 -->
+    <color name="text_gray">#9F9F9F</color>
+    <!-- 浅灰 -->
+    <color name="text_gray_hint">#ABABAB</color>
+    <!-- 灰色颜色值结束 -->
+
+    <color name="text_red">#FA6638</color>
+    <color name="text_black_shallow">#1A1A1A</color>
+    <color name="text_black_shallow_half_tran">#B31A1A1A</color>
+    <color name="gray">#757575</color>
+    <color name="line">#DCDCDC</color>
+</resources>
