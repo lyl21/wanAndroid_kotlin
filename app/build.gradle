@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
 }
 
+
 android {
     compileSdkVersion 31
 
@@ -15,7 +16,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
-
 
 
     buildTypes {
@@ -32,9 +32,14 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
-    buildFeatures {
-        viewBinding true
+
+
+    dataBinding {
+        enabled = true
     }
+//    buildFeatures {
+//        viewBinding true
+//    }
 
     sourceSets {
         main {
@@ -60,28 +65,47 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'com.google.android.libraries.places:places:2.4.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    //AndroidUtilCode  https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
-    implementation 'com.blankj:utilcodex:1.30.6'
+    //反射
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.6.0'
+    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    //协程
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
-    //mmkv  https://github.com/Tencent/MMKV
-    implementation 'com.tencent:mmkv-static:1.2.11'
 
+    /*coil*/
+    implementation("io.coil-kt:coil:1.4.0")
     /*glide*/
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
-    /*retrofit、rxjava*/
+    /*http*/
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    /*okhttp*/
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
-    /*adapter*/
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+
+    //三方
+    //AndroidUtilCode  https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
+    implementation 'com.blankj:utilcodex:1.30.6'
+    //沉浸式导航栏  https://github.com/Zackratos/UltimateBarX
+
+    //滑动布局 https://github.com/donkingliang/ConsecutiveScroller
+    implementation 'com.github.donkingliang:ConsecutiveScroller:4.6.0'
+    //图片选择
+    implementation 'io.github.lucksiege:pictureselector:v2.7.3-rc10'
+    //图片压缩
+    implementation 'id.zelory:compressor:3.0.1'
+    //mmkv  https://github.com/Tencent/MMKV
+    implementation 'com.tencent:mmkv-static:1.2.11'
+    //adapter  https://github.com/CymChad/BaseRecyclerViewAdapterHelper
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
     /*banner*/
     implementation 'io.github.youth5201314:banner:2.2.2'
@@ -92,22 +116,32 @@ dependencies {
 
     // flexLayout
     implementation 'com.hyman:flowlayout-lib:1.1.2'
-
     /*VerticalTabLayout*/
     implementation 'q.rorbin:VerticalTabLayout:1.2.4'
-
-    // ViewBindingKTX   The following are optional, please add as needed
-    implementation 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-ktx:1.2.4'
-    implementation 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-base:1.2.4'
-    implementation 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-brvah:1.2.4'
-
-    //EasyPermissions
-    implementation 'com.vmadalin:easypermissions-ktx:1.0.0'
-
+    //权限请求
+    implementation 'com.guolindev.permissionx:permissionx:1.6.1'
     // splitties
     implementation("com.louiscad.splitties:splitties-fun-pack-android-base:3.0.0")
     implementation("com.louiscad.splitties:splitties-fun-pack-android-material-components:3.0.0")
 
+    //下拉刷新 https://github.com/scwang90/SmartRefreshLayout
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载
+    //声网音视频sdk
+    implementation 'io.agora.rtc:full-sdk:3.5.2'
 
+    //lombok
+    implementation 'org.projectlombok:lombok:1.18.22'
+
+//    //https://github.com/KingJA/LoadSir
+//    implementation 'com.kingja.loadsir:loadsir:1.3.8'
+
+    //https://github.com/Zhao-Yan-Yan/MultiStatePage
+    implementation 'com.github.Zhao-Yan-Yan:MultiStatePage:2.0.2'
+
+    //地图
+    //Google
+//    implementation 'com.google.android.gms:play-services-maps:18.0.0'
 
 }

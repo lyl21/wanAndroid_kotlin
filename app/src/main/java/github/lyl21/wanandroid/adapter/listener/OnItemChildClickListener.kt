@@ -1,8 +1,8 @@
 package github.lyl21.wanandroid.adapter.listener
 
 import android.view.View
-import github.lyl21.wanandroid.adapter.BaseBindingQuickAdapter
+import com.chad.library.adapter.base.BaseQuickAdapter
 
 public interface OnItemChildClickListener {
-    fun onItemChildClick(adapter: BaseBindingQuickAdapter<*, *>, view: View, position: Int)
+    fun onItemChildClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int)
 }

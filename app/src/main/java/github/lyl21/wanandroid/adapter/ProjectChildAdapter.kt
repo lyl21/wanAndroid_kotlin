@@ -1,21 +1,25 @@
 package github.lyl21.wanandroid.adapter
 
-import com.bumptech.glide.Glide
+import coil.load
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.module.LoadMoreModule
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import github.lyl21.wanandroid.R
+import github.lyl21.wanandroid.bean.ProjectClassInfoChild
 import github.lyl21.wanandroid.databinding.ItemProjectChildBinding
-import github.lyl21.wanandroid.entity.ProjectClassInfoChild
-import github.lyl21.wanandroid.entity.ProjectClassInfoChildData
 
-class ProjectChildAdapter : BaseBindingQuickAdapter
-<ProjectClassInfoChildData, ItemProjectChildBinding>(R.layout.item_project_child),
-    LoadMoreModule {
+class ProjectChildAdapter :
+    BaseQuickAdapter<ProjectClassInfoChild, BaseDataBindingHolder<ItemProjectChildBinding>>(R.layout.item_project_child){
 
 
-    override fun convert(holder: BaseBindingHolder, item: ProjectClassInfoChildData) {
-        Glide.with(context).load(item.envelopePic).into(holder.getView(R.id.iv_project_img))
+    override fun convert(
+        holder: BaseDataBindingHolder<ItemProjectChildBinding>,
+        item: ProjectClassInfoChild
+    ) {
+        holder.dataBinding!!.ivProjectImg
+            .load(item.envelopePic) {
+                crossfade(true)
+            }
         holder.setText(R.id.tv_project_title, item.title)
         holder.setText(R.id.tv_project_desc, item.desc)
         holder.setText(R.id.tv_project_date, item.niceDate)

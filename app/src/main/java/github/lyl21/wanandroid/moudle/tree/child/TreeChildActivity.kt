@@ -1,12 +1,17 @@
 package github.lyl21.wanandroid.moudle.tree.child
 
+import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
+import com.blankj.utilcode.util.ClickUtils
+import com.blankj.utilcode.util.ToastUtils
 import github.lyl21.wanandroid.R
-import github.lyl21.wanandroid.adapter.CommonViewpager2Adapter
+import github.lyl21.wanandroid.base.adapter.CommonViewpager2Adapter
 import github.lyl21.wanandroid.databinding.ActivityTreeChildBinding
-import github.lyl21.wanandroid.entity.SysTreeChildren
+import github.lyl21.wanandroid.bean.SysTreeChildren
 import com.google.android.material.tabs.TabLayoutMediator
-import BaseActivity
+import github.lyl21.wanandroid.base.ui.BaseActivity
+import github.lyl21.wanandroid.base.ui.BaseVMActivity
+import github.lyl21.wanandroid.util.LoadingDialogUtil
 
 
 class TreeChildActivity : BaseActivity<ActivityTreeChildBinding>() {
@@ -18,14 +23,11 @@ class TreeChildActivity : BaseActivity<ActivityTreeChildBinding>() {
         var CID: String = "cid"
         var POSITION: String = "position"
     }
-
-    override fun createPresenter() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        initView()
+        initListener()
     }
-
-    override fun getLayoutId(): Int {
-        return R.layout.activity_tree_child
-    }
-
     override fun initView() {
         setBackEnabled()
 
@@ -41,26 +43,33 @@ class TreeChildActivity : BaseActivity<ActivityTreeChildBinding>() {
             commonViewpageAdapter.addFragment(TreeChildFragment.newInstance(childList[i].id))
         }
 
-        binding.vpTreeChild.adapter = commonViewpageAdapter
-        binding.vpTreeChild.offscreenPageLimit = titles.size
+        db.vpTreeChild.adapter = commonViewpageAdapter
+        db.vpTreeChild.offscreenPageLimit = titles.size
 
 
         val index = intent.getIntExtra(POSITION, 0)
-        binding.vpTreeChild.currentItem = index
+        db.vpTreeChild.currentItem = index
 
 
         //连接tab vp2
         mediator = TabLayoutMediator(
-            binding.tabTreeChild,
-            binding.vpTreeChild
+            db.tabTreeChild,
+            db.vpTreeChild
         ) { tab, position ->
             //  为Tab设置Text
             tab.text = titles[position]
         }
         mediator.attach()
         //viewPager2 页面切换监听
-        binding.vpTreeChild.registerOnPageChangeCallback(changeCallback)
+        db.vpTreeChild.registerOnPageChangeCallback(changeCallback)
 
+    }
+
+    override  fun initListener() {
+    }
+
+    override fun getLayoutId(): Int {
+        return R.layout.activity_tree_child
     }
 
     private val changeCallback: ViewPager2.OnPageChangeCallback =
@@ -83,8 +92,11 @@ class TreeChildActivity : BaseActivity<ActivityTreeChildBinding>() {
         }
 
     override fun onDestroy() {
-        mediator.detach();
-        binding.vpTreeChild.unregisterOnPageChangeCallback(changeCallback);
+//        mediator.detach()
+        db.vpTreeChild.unregisterOnPageChangeCallback(changeCallback);
         super.onDestroy()
     }
+
+
+
 }

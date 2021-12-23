@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="view"
+            type="github.lyl21.wanandroid.moudle.navi.NaviFragment" />
+    </data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-   >
-    <q.rorbin.verticaltablayout.VerticalTabLayout
-        android:id="@+id/vertical_tab_layout"
+    tools:context="github.lyl21.wanandroid.moudle.navi.NaviFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_navi_rv"
         android:layout_width="100dp"
         android:layout_height="match_parent"
-        android:background="#EDEDED"
-        app:indicator_color="@color/white"
-        app:indicator_gravity="fill"
-        app:tab_height="56dp"
-        app:tab_mode="scrollable" />
+        android:background="@color/background_shallow"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_text"
+        />
+    <!--    <q.rorbin.verticaltablayout.VerticalTabLayout-->
+    <!--        android:id="@+id/vertical_tab_layout"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:background="#EDEDED"-->
+    <!--        app:indicator_color="@color/white"-->
+    <!--        app:indicator_gravity="fill"-->
+    <!--        app:tab_height="56dp"-->
+    <!--        app:tab_mode="scrollable" />-->
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@color/background">
 
         <com.zhy.view.flowlayout.TagFlowLayout
             android:id="@+id/navi_flow_layout"
@@ -30,3 +46,4 @@
     </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
+</layout>

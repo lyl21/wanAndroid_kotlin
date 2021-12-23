@@ -6,13 +6,16 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="half_black">#80000000</color>
+    <color name="background_shallow">#80F5F5F5</color>
+    <color name="colorPrimary">#748ffc</color>
+    <color name="colorPrimaryDark">#748ffc</color>
+    <color name="textColorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#fa8c16</color>
     <color name="main_base_color">#39C0C2</color>
     <color name="main_blue_low">#71D4D6</color>
     <color name="background">#F5F5F5</color>
+    <color name="card_bg">#F5F5F5</color>
     <color name="shallow_white">#FAFAFA</color>
     <color name="money_yellow">#FC9813</color>
     <color name="shallow_gray">#909090</color>
@@ -22,11 +25,18 @@
     <color name="shallow_yellow">#B27F39</color>
     <color name="goods_details_transparent">#66000000</color>
     <color name="shallow_gray_white">#99FAFAFA</color>
+
+    <color name="transparent">#00000000</color>
     <!-- 黑色颜色值开始 -->
     <!-- 黑色字体 -->
     <color name="text_black">#323232</color>
     <!-- 浅黑色 -->
     <color name="text_black_hint">#646464</color>
+    <!--黑色-toast背景色-->
+    <color name="defaultToastBg">#bb12140E</color>
+    <color name="defaultDialogTipBg">#393939</color>
+    <!--黑色-半透明-->
+    <color name="defaultBlackTransparent">#32323232</color>
     <!-- 黑色颜色值结束 -->
 
     <!-- 白色字体 -->
@@ -34,6 +44,7 @@
 
     <!-- 灰色颜色值开始 -->
     <!-- 灰色 -->
+    <color name="defaultGrayText">#9F9F9F</color>
     <color name="text_gray">#9F9F9F</color>
     <!-- 浅灰 -->
     <color name="text_gray_hint">#ABABAB</color>
@@ -44,4 +55,19 @@
     <color name="text_black_shallow_half_tran">#B31A1A1A</color>
     <color name="gray">#757575</color>
     <color name="line">#DCDCDC</color>
+
+    <color name="gray_lightest">#DEDEDE</color>
+    <color name="gray_light">#CCCCCC</color>
+    <color name="gray_98">#989898</color>
+    <color name="gray_dark">#666666</color>
+    <color name="gray_deep_dark">#333333</color>
+
+    <color name="blue">#007AFF</color>
+    <color name="blue_medium">#44A2FC</color>
+    <color name="blue_light">#0ECFFF</color>
+    <color name="blue_alpha">#9CD9FF</color>
+
+    <color name="dark_black">#CC262626</color>
+    <color name="black_half_transparent">#66000000</color>
+    <color name="black_full_transparent">#22000000</color>
 </resources>

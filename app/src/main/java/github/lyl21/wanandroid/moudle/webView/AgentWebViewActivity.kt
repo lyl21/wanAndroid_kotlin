@@ -1,17 +1,20 @@
 package github.lyl21.wanandroid.moudle.webView
 
-import BaseActivity
+import github.lyl21.wanandroid.base.ui.BaseActivity
 import android.annotation.SuppressLint
 import android.graphics.Color
+import android.os.Bundle
 import android.view.Gravity
 import android.view.KeyEvent
 import android.webkit.WebSettings
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.blankj.utilcode.util.ClickUtils
+import com.blankj.utilcode.util.ToastUtils
 import github.lyl21.wanandroid.R
-import github.lyl21.wanandroid.databinding.ActivityAgentwebviewBinding
 import com.just.agentweb.AgentWeb
+import github.lyl21.wanandroid.databinding.ActivityAgentwebviewBinding
 
 class AgentWebViewActivity : BaseActivity<ActivityAgentwebviewBinding>() {
 
@@ -22,19 +25,21 @@ class AgentWebViewActivity : BaseActivity<ActivityAgentwebviewBinding>() {
 
     private lateinit var mAgentWeb: AgentWeb
 
-    override fun createPresenter() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        initView()
+        initListener()
     }
 
-    override fun getLayoutId(): Int {
-       return R.layout.activity_agentwebview
-    }
-
+    override fun initListener() {}
     override fun initView() {
-        setMyTitle(intent.getStringExtra(WEB_TITLE)!!)
-        setBackEnabled()
+        title = intent.getStringExtra(WEB_TITLE)!!
+//        setBackEnabled()
         initAgentWeb()
     }
-
+    override fun getLayoutId(): Int {
+        return R.layout.activity_agentwebview
+    }
     private fun getLoadUrl(): String? {
         return intent.getStringExtra(WEB_URL)
     }
@@ -43,7 +48,7 @@ class AgentWebViewActivity : BaseActivity<ActivityAgentwebviewBinding>() {
     @SuppressLint("SetJavaScriptEnabled")
     private fun initAgentWeb() {
         mAgentWeb = AgentWeb.with(this)
-            .setAgentWebParent(binding.webContent, LinearLayout.LayoutParams(-1, -1))
+            .setAgentWebParent(db.webContent, LinearLayout.LayoutParams(-1, -1))
             .useDefaultIndicator()
             .createAgentWeb()
             .ready()
@@ -105,4 +110,6 @@ class AgentWebViewActivity : BaseActivity<ActivityAgentwebviewBinding>() {
         mAgentWeb.webLifeCycle.onDestroy()
         super.onDestroy()
     }
+
+
 }

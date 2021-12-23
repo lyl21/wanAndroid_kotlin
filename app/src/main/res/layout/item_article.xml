@@ -1,99 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginHorizontal="10dp"
-    android:layout_marginTop="10dp"
-    android:foreground="?android:attr/selectableItemBackground"
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="2dp"
-    app:contentPadding="15dp"
-    android:id="@+id/card_home_article"
-    >
-
-    <LinearLayout
+<layout>
+    <data>
+        <variable
+            name="view"
+            type="github.lyl21.wanandroid.adapter.ArticleAdapter" />
+    </data>
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_home_article"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/iv_home_article"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/img_404"
-            android:src="@mipmap/ic_launcher" />
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/card_bg"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp"
+        app:contentPadding="15dp">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tv_home_article_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/article_title"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+            <ImageView
+                android:id="@+id/iv_home_article"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/img_404"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_home_article_tag"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_home_article_title"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/shape_border_primary_oval"
-                    android:includeFontPadding="false"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="2dp"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="2dp"
-                    android:text="@string/article_tag"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="12sp" />
+                    android:text="@string/article_title"
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/tv_home_article_time"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:text="@string/article_time_ago"
-                    android:textColor="@color/gray" />
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_home_article_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_border_primary_oval"
+                        android:includeFontPadding="false"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="2dp"
+                        android:text="@string/article_tag"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_home_article_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="@string/article_time_ago"
+                        android:textColor="@color/gray" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/iv_home_article_download"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="@string/img_404"
+                android:src="@mipmap/download" />
+
+            <ImageView
+                android:id="@+id/iv_home_article_like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/img_404"
+                android:src="@mipmap/like_normal" />
+
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/iv_home_article_download"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:contentDescription="@string/img_404"
-            android:src="@mipmap/download" />
-
-        <ImageView
-            android:layout_marginStart="10dp"
-            android:id="@+id/iv_home_article_like"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:contentDescription="@string/img_404"
-            android:src="@mipmap/like_normal" />
-
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</layout>

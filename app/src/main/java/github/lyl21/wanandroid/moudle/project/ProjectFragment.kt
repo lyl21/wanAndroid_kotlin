@@ -1,70 +1,59 @@
 package github.lyl21.wanandroid.moudle.project
 
-import github.lyl21.wanandroid.R
-import github.lyl21.wanandroid.adapter.CommonViewpager2Adapter
-import github.lyl21.wanandroid.base.Response
+import android.view.View
+import github.lyl21.wanandroid.base.adapter.CommonViewpager2Adapter
 import github.lyl21.wanandroid.databinding.FragmentProjectBinding
-import github.lyl21.wanandroid.entity.ProjectClassInfo
-import github.lyl21.wanandroid.moudle.project.child.ProjectChildFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import java.util.ArrayList
-import BaseFragment
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
-import com.blankj.utilcode.util.ToastUtils
+import github.lyl21.wanandroid.R
+import github.lyl21.wanandroid.base.ui.BaseRefreshVMFragment
+import github.lyl21.wanandroid.moudle.project.child.ProjectChildFragment
 
 
-class ProjectFragment : BaseFragment<FragmentProjectBinding>(), ProjectView {
+class ProjectFragment : BaseRefreshVMFragment<FragmentProjectBinding, ProjectVM>() {
 
-    private lateinit var mediator: TabLayoutMediator
-    private lateinit var mProjectPresenter: ProjectPresenter
     private lateinit var commonViewpage2Adapter: CommonViewpager2Adapter
     private val titles: MutableList<String> = ArrayList()
 
-
-    override fun createPresenter() {
-        mProjectPresenter = ProjectPresenter(this)
+    override fun initData() {
+            vm.getProjectInfo.observe(this){
+                val data=it.data!!
+                //得到标题集合
+                for (i in data.indices) {
+                    titles.add(data[i].name)
+                    commonViewpage2Adapter.addFragment(ProjectChildFragment.newInstance(data[i].id))
+                    //viewPager2 初始化
+                    db.vp2Project.apply {
+                        offscreenPageLimit = titles.size
+                        currentItem = 0
+                        isUserInputEnabled = true
+                    }
+                    TabLayoutMediator(
+                        db.tabProject,
+                        db.vp2Project,
+                        TabLayoutMediator.TabConfigurationStrategy { tab, position ->
+                            //  为Tab设置Text
+                            tab.text = titles[position]
+                        }).attach()
+                }
+            }
     }
-
-    override fun getLayoutId(): Int {
-        return R.layout.fragment_project
+    override fun onLoad() {
+        vm.getProjectInfo()
     }
-
+    override fun onClick(v: View?) {}
+    override fun initListener() {
+        db.vp2Project.registerOnPageChangeCallback(changeCallback)
+    }
     override fun initView() {
         //创建Fragment集合 并设置为ViewPager
         commonViewpage2Adapter = CommonViewpager2Adapter(childFragmentManager, lifecycle)
-        binding.vpProject.adapter = commonViewpage2Adapter
+        db.vp2Project.adapter = commonViewpage2Adapter
     }
-
-
-    override fun initData() {
-        mProjectPresenter.getProjectInfo()
+    override fun getLayoutId(): Int {
+        return R.layout.fragment_project
     }
-
-    override fun getProject(project: Response<MutableList<ProjectClassInfo>>) {
-        //得到标题集合
-        for (i in project.data.indices) {
-            titles.add(project.data[i].name)
-            commonViewpage2Adapter.addFragment(ProjectChildFragment.newInstance(project.data[i].id))
-        }
-        binding.vpProject.apply {
-            offscreenPageLimit = titles.size
-            currentItem = 0
-            isUserInputEnabled = true
-        }
-
-        mediator = TabLayoutMediator(
-            binding.tabProject,
-            binding.vpProject,
-            TabLayoutMediator.TabConfigurationStrategy { tab, position ->
-                //  为Tab设置Text
-                tab.text = titles[position]
-            })
-        mediator.attach()
-
-        //viewPager2 页面切换监听
-        binding.vpProject.registerOnPageChangeCallback(changeCallback)
-    }
-
 
     private val changeCallback: OnPageChangeCallback = object : OnPageChangeCallback() {
         override fun onPageSelected(position: Int) {
@@ -85,14 +74,20 @@ class ProjectFragment : BaseFragment<FragmentProjectBinding>(), ProjectView {
         }
     }
 
-    override fun getProjectError(msg: String) {
-        ToastUtils.showLong(msg)
-    }
+
+
 
     override fun onDestroy() {
-        mediator.detach()
-        binding.vpProject.unregisterOnPageChangeCallback(changeCallback)
         super.onDestroy()
+//        mediator.detach()
+//        binding.vp2Project.unregisterOnPageChangeCallback(changeCallback)
     }
+
+
+    override fun vmClass(): Class<ProjectVM> {
+        return ProjectVM::class.java
+    }
+
+
 
 }

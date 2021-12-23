@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+<data>
+    <variable
+        name="view"
+        type="github.lyl21.wanandroid.adapter.ProjectChildAdapter" />
+</data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="@color/shallow_white"
     android:orientation="horizontal"
     android:padding="20dp">
 
@@ -26,7 +32,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="@string/article_title"
-            android:textColor="@color/black"
+            android:textColor="@color/text_black"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -68,3 +74,4 @@
 
 
 </LinearLayout>
+</layout>

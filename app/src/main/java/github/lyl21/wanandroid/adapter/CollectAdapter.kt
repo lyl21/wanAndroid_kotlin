@@ -1,15 +1,17 @@
 package github.lyl21.wanandroid.adapter
 
 import android.text.Html
+import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.blankj.utilcode.util.LogUtils
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
+import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.module.LoadMoreModule
+import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
+import com.tencent.mmkv.MMKV
 import github.lyl21.wanandroid.R
 import github.lyl21.wanandroid.databinding.ItemArticleBinding
-import github.lyl21.wanandroid.entity.CollectDetail
+import github.lyl21.wanandroid.bean.CollectInfo
+import github.lyl21.wanandroid.common.ConstantParam
 
 /**
  *
@@ -18,49 +20,38 @@ import github.lyl21.wanandroid.entity.CollectDetail
  * @date    2021/9/29 17:05
  */
 class CollectAdapter :
-    BaseBindingQuickAdapter<CollectDetail, ItemArticleBinding>(R.layout.item_article),
+    BaseQuickAdapter<CollectInfo, BaseDataBindingHolder<ItemArticleBinding>>(R.layout.item_article),
     LoadMoreModule {
 
-//    private var imgLists: MutableList<Int>
+    private var imgLists: MutableList<String>
 
     init {
         addChildClickViewIds(R.id.iv_home_article_like)
-//        imgLists = mutableListOf(
-//            R.mipmap.list_1,
-//            R.mipmap.list_2,
-//            R.mipmap.list_3,
-//            R.mipmap.list_4,
-//            R.mipmap.list_5,
-//            R.mipmap.list_6,
-//            R.mipmap.list_7,
-//            R.mipmap.list_8,
-//            R.mipmap.list_9,
-//            R.mipmap.list_10,
-//        )
+        imgLists = mutableListOf()
+        for (index in 0..7){
+            val decodeString = MMKV.defaultMMKV().decodeString("bingImgList[$index]")
+            decodeString?.let { imgLists.add(index, it) };
+        }
     }
 
 
-    override fun convert(holder: BaseBindingHolder, item: CollectDetail) {
+    override fun convert(holder: BaseDataBindingHolder<ItemArticleBinding>, item: CollectInfo) {
         LogUtils.e("lll", item.author)
-            holder.setVisible(R.id.card_home_article,true)
+        holder.setVisible(R.id.card_home_article, true)
 
-//            Glide.with(context)
-//                .load(imgLists[(0..9).random()])
-//                .apply(
-//                    RequestOptions()
-//                        .transform(
-//                            CenterCrop(), RoundedCorners(15)
-//                        )
-//                )
-//                .into(holder.getView(R.id.iv_home_article))
+        holder.dataBinding!!.ivHomeArticle
+            .load(ConstantParam.BingBaseUrl + imgLists[(0..7).random()]) {
+                crossfade(true)
+                transformations(RoundedCornersTransformation(15f, 15f, 15f, 15f))
+            }
+        holder.setText(R.id.tv_home_article_title, Html.fromHtml(item.title))
+        holder.setText(R.id.tv_home_article_tag, item.chapterName)
+        holder.setText(R.id.tv_home_article_time, item.niceDate)
 
-
-            holder.setText(R.id.tv_home_article_title, Html.fromHtml(item.title))
-            holder.setText(R.id.tv_home_article_tag, item.chapterName)
-            holder.setText(R.id.tv_home_article_time, item.niceDate)
-            Glide.with(context)
-                .load(R.mipmap.like_checked)
-                .into(holder.getView(R.id.iv_home_article_like))
+        holder.dataBinding!!.ivHomeArticleLike
+            .load(R.mipmap.like_checked){
+                crossfade(true)
+            }
 
     }
 }

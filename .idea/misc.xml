@@ -3,6 +3,76 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/btn_beauty.xml" value="0.2453125" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/btn_mute_audio.xml" value="0.2453125" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/btn_mute_video.xml" value="0.2453125" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/fg_flow_download.xml" value="0.2712962962962963" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196875" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/live_name_board_bg.xml" value="0.2453125" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/live_name_board_fav_bg.xml" value="0.2453125" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/live_room_bg.xml" value="0.33" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/loading_progress_bar.xml" value="0.3723076923076923" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/role_background.xml" value="0.3723076923076923" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/rounded_bg_full_transparent.xml" value="0.2453125" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/rounded_bg_half_transparent.xml" value="0.2453125" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/select_role_block_bg.xml" value="0.3723076923076923" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/selector_half_black.xml" value="0.196875" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/selector_primary_oval.xml" value="0.196875" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/setting_resolution_item_background.xml" value="0.2453125" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/shape_bg_border_gray_5.xml" value="0.196875" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/shape_bg_white_5.xml" value="0.2515625" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/shape_border_primary_oval.xml" value="0.196875" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/shape_dialog_tip_bg.xml" value="0.3723076923076923" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/shape_half_black.xml" value="0.196875" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/shape_nav_bar_gradient.xml" value="0.196875" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/drawable/shape_toast_custom_bg.xml" value="0.3723076923076923" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_about.xml" value="0.25" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_agentwebview.xml" value="0.2515625" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_choose_role.xml" value="0.3619791666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_collect.xml" value="0.25729166666666664" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_customer_service.xml" value="0.2552083333333333" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_dialog.xml" value="0.3619791666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_flow_download.xml" value="0.25" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_live.xml" value="0.23541666666666666" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_location.xml" value="0.3619791666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_main.xml" value="0.17603850050658562" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_picture_browser.xml" value="0.17603850050658562" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_search.xml" value="0.3619791666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_splash.xml" value="0.2" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_title.xml" value="0.25" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/activity_tree_child.xml" value="0.23541666666666666" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/base_activity_empty.xml" value="0.25" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/base_fg_layout.xml" value="0.2609375" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/base_item_picture_browser.xml" value="0.3619791666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/base_layout_error.xml" value="0.25" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/base_layout_loading.xml" value="0.3619791666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/custom_info_contents.xml" value="0.3619791666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/dialog_tip.xml" value="0.23541666666666666" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/fg_flow_download.xml" value="0.22" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/fragment_blank.xml" value="0.18697916666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/fragment_home.xml" value="0.18" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/fragment_navi.xml" value="0.25" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/fragment_project.xml" value="0.1" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/fragment_project_child.xml" value="0.23541666666666666" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/fragment_tree.xml" value="0.2875" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/fragment_tree_child.xml" value="0.33242506811989103" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/item_article.xml" value="0.20625" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/item_location.xml" value="0.3619791666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/item_navi.xml" value="0.33967391304347827" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/item_project_child.xml" value="0.21614583333333334" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/item_text.xml" value="0.33967391304347827" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/item_tree.xml" value="0.2552083333333333" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/loading_dialog.xml" value="0.17603850050658562" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/layout/nav_header_main.xml" value="0.22760416666666666" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/menu/activity_main_drawer.xml" value="0.26197916666666665" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/menu/main_toolbar.xml" value="0.3619791666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.3619791666666667" />
+        <entry key="..\:/All/CODE/android/wanAndroid_kotlin/app/src/main/res/menu/menu_search.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/10914/.gradle/caches/transforms-3/48d32af99c5821650674afcf24a6ed06/transformed/jetified-permissionx-1.6.1/res/layout/permissionx_default_dialog_layout.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/10914/.gradle/caches/transforms-3/c38297c790e17e62bdb329982359ce9d/transformed/jetified-pictureselector-v2.7.3-rc10/res/drawable/picture_image_placeholder.xml" value="0.2212962962962963" />
+        <entry key="..\:/Users/10914/.gradle/caches/transforms-3/c38297c790e17e62bdb329982359ce9d/transformed/jetified-pictureselector-v2.7.3-rc10/res/layout/picture_activity_video_play.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/10914/.gradle/caches/transforms-3/c38297c790e17e62bdb329982359ce9d/transformed/jetified-pictureselector-v2.7.3-rc10/res/layout/picture_image_preview.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/Administrator/Desktop/wanAndroid_kotlin/app/src/main/res/drawable/my_progress_loading_go.xml" value="0.2765625" />
         <entry key="..\:/Users/Administrator/Desktop/wanAndroid_kotlin/app/src/main/res/layout/activity_customer_service.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/Administrator/Desktop/wanAndroid_kotlin/app/src/main/res/layout/activity_main.xml" value="0.2046875" />

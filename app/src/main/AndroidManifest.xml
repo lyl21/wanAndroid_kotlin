@@ -31,6 +31,22 @@
     <!--如果您的应用需要后台定位权限，且有可能运行在Android Q设备上,并且设置了target>28，必须增加这个权限声明-->
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <!--DownloadManager-->
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+
+    <!--sdk-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -41,12 +57,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
-            android:exported="false"
+            android:name=".moudle.splash.SplashActivity"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -55,16 +70,29 @@
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--        高德定位-->
-        <service
-            android:name="com.amap.api.location.APSService"
-            android:foregroundServiceType="location" />
+<!--        <service-->
+<!--            android:name="com.amap.api.location.APSService"-->
+<!--            android:foregroundServiceType="location" />-->
+<!--        <meta-data-->
+<!--            android:name="com.amap.api.v2.apikey"-->
+<!--            android:value="947a9ac86cfe46c305f3eb7fc2c66455" />-->
+
+<!--        google map-->
         <meta-data
-            android:name="com.amap.api.v2.apikey"
-            android:value="947a9ac86cfe46c305f3eb7fc2c66455" />
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD7Ja5JBjUQW72ktpvXAVD7EWUUsq6EpvI" />
 
         <activity
             android:name=".moudle.map.LocationActivity"
             android:exported="false" />
+
+        <activity android:name=".moudle.live.RoleActivity"
+            android:exported="false"
+            />
+
+        <activity android:name=".moudle.live.LiveActivity"
+            android:exported="false"
+            />
         <activity
             android:name=".moudle.login.LoginActivity"
             android:exported="false" />
@@ -83,6 +111,11 @@
         <activity
             android:name=".moudle.webView.AgentWebViewActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".http.download.DialogActivity"
+            android:exported="false"
+            android:theme="@style/dialog_transparent"/>
 
     </application>
 

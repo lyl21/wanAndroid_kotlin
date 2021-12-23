@@ -7,25 +7,20 @@ import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import github.lyl21.wanandroid.R
-import github.lyl21.wanandroid.databinding.ItemTreeBinding
-import github.lyl21.wanandroid.entity.SysTree
-import github.lyl21.wanandroid.entity.SysTreeChildren
-import github.lyl21.wanandroid.moudle.tree.TreeFragment
+import github.lyl21.wanandroid.bean.SysTree
+import github.lyl21.wanandroid.bean.SysTreeChildren
 import com.zhy.view.flowlayout.FlowLayout
 import com.zhy.view.flowlayout.TagAdapter
 import com.zhy.view.flowlayout.TagFlowLayout
-import org.w3c.dom.Text
 import java.util.*
 
-class TreeAdapter : BaseBindingQuickAdapter<SysTree, ItemTreeBinding>(R.layout.item_tree),
+class TreeAdapter : BaseQuickAdapter<SysTree, BaseViewHolder>(R.layout.item_tree),
     TagFlowLayout.OnTagClickListener {
 
 
-    override fun convert(holder: BaseBindingHolder, item: SysTree) {
+    override fun convert(holder: BaseViewHolder, item: SysTree) {
         holder.setText(R.id.tv_tree_title, item.name)
-
         val flowLayout = holder.getView<TagFlowLayout>(R.id.flow_tree)
-
         //根据状态处理显示结果
         if (item.isShow) {
             flowLayout.visibility = View.VISIBLE
@@ -52,7 +47,7 @@ class TreeAdapter : BaseBindingQuickAdapter<SysTree, ItemTreeBinding>(R.layout.i
     }
 
 
-    private var mOnItemTagClickListener: OnItemTagClickListener? = null
+    private lateinit var mOnItemTagClickListener: OnItemTagClickListener
 
     /**
      * 定义接口,比原来接口多一个parentPosition参数，父view的position
@@ -69,7 +64,7 @@ class TreeAdapter : BaseBindingQuickAdapter<SysTree, ItemTreeBinding>(R.layout.i
     }
 
     override fun onTagClick(view: View?, position: Int, parent: FlowLayout?): Boolean {
-        mOnItemTagClickListener?.onItemTagClick(view, position, parent)
+        mOnItemTagClickListener.onItemTagClick(view, position, parent)
         return true
     }
 

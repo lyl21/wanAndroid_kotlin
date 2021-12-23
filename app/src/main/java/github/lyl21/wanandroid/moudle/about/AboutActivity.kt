@@ -1,43 +1,64 @@
 package github.lyl21.wanandroid.moudle.about
 
-import BaseActivity
+import github.lyl21.wanandroid.base.ui.BaseActivity
 import android.app.Activity
-import android.content.ClipData
-import android.content.ClipboardManager
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.MenuItem
+import android.view.View
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.ClipboardUtils
-import com.blankj.utilcode.util.Utils.getApp
+import com.blankj.utilcode.util.ToastUtils
 import github.lyl21.wanandroid.R
-import github.lyl21.wanandroid.databinding.ActivityAboutBinding
 import com.google.android.material.snackbar.Snackbar
+import github.lyl21.wanandroid.databinding.ActivityAboutBinding
 
 class AboutActivity : BaseActivity<ActivityAboutBinding>() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        initView()
+        initListener()
+    }
 
-    override fun createPresenter() {
+    override fun initListener() {}
+    override fun initView() {
+//        setBackEnabled()
+        supportActionBar?.hide()
+        db.title.setTitle("关于")
+        db.tvAboutVersionInfo.text = AppUtils.getAppVersionName()
+        setGradient(db.tvAboutVersionInfo)
+
+        db.aboutGithub.setOnClickListener {
+            //复制到粘贴板
+            ClipboardUtils.copyText(db.aboutGithub.text)
+            Snackbar.make(db.llAbout, "复制成功", Snackbar.LENGTH_LONG).show()
+        }
+
+        ToastUtils.showLong("接收到的数据为：" + intent.getStringExtra("info"))
     }
 
     override fun getLayoutId(): Int {
         return R.layout.activity_about
     }
 
-    override fun initView() {
-        setBackEnabled()
-        binding.tvAboutVersionInfo.text = AppUtils.getAppVersionName()
-        setGradient(binding.tvAboutVersionInfo)
 
-        binding.aboutGithub.setOnClickListener {
-            //复制到粘贴板
-            ClipboardUtils.copyText(binding.aboutGithub.text )
-            Snackbar.make(binding.llAbout, "复制成功", Snackbar.LENGTH_LONG).show()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            setResult(Activity.RESULT_OK, Intent().apply {
+                putExtra("info", "back_info")
+            })
+            finish()
         }
+        return super.onOptionsItemSelected(item)
     }
-
-
 
 
     private fun setGradient(textView: TextView) {
@@ -51,5 +72,6 @@ class AboutActivity : BaseActivity<ActivityAboutBinding>() {
         textView.paint.shader = linearGradient
         textView.invalidate()
     }
+
 
 }
